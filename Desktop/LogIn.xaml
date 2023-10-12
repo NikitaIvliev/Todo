@@ -1,0 +1,102 @@
+﻿<Window x:Class="Desktop.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop"
+        mc:Ignorable="d"
+        Title="LogIn" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+            </ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Images/Logo.png"
+               Width="149"
+               Height="149"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Margin="70 70 0 0"
+        />
+        <WrapPanel 
+            Grid.ColumnSpan="2"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0 50 0 0"
+            Orientation="Vertical"
+        >
+        <Label Content="Добро пожаловать!"
+            FontSize="32"
+            FontFamily="Actor"/>
+        <WrapPanel Margin="0 118 0 0"
+            Grid.Column="1"
+            Orientation="Vertical"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+                <Label Content="Почта"
+                    FontSize="20"
+                    FontFamily="Actor"/>
+                    <TextBox 
+                        x:Name="Email" 
+                        Width="326"
+                        VerticalAlignment="Bottom"
+                        BorderBrush="#FFDFDFDF"
+                        HorizontalAlignment="Left"
+                        BorderThickness="0,0,0,1"/>
+        </WrapPanel>
+        <WrapPanel Margin="0 10 0 0" 
+            Grid.Column="1"
+            Orientation="Vertical"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top">
+                <Label Content="Пароль"
+                           FontSize="20"
+                           FontFamily="Actor"/>
+                                <PasswordBox x:Name="Password"  Margin="0 0 0 10"
+                                      Width="326"
+                                      VerticalAlignment="Bottom" 
+                                      BorderBrush="#FFDFDFDF"
+                                      HorizontalAlignment="Left"
+                                      BorderThickness="0 0 0 1"/>
+                <Label HorizontalAlignment="Right"
+                           Content="Восстановить пароль"
+                           FontFamily="Actor"
+                           Background="White"
+                           BorderThickness="0 0 0 0"
+                />
+        </WrapPanel>
+        <Border  Margin="5 0 5 10"
+                     CornerRadius="12 12 2 2" 
+                     BorderThickness="2"
+                     Background="#F96060">
+            <Button Content="Войти"
+                        Background="#F96060"
+                        Padding="0 10 0 10"
+                        Foreground="White"
+                        FontSize="18"
+                        BorderBrush="#FFF96060"
+                        VerticalAlignment="Center"
+                        Margin="8 0 10 0"
+                        FontFamily="Actor" 
+            />
+        </Border>
+        <Border  Margin="5 0 5 10"
+                     CornerRadius="2 2 12 12"
+                     BorderThickness="2"
+                     Background="#F96060">
+            <Button Content="Регистрация"
+                        Background="#F96060"
+                        Padding="0 10 0 10"
+                        Foreground="White"
+                        FontSize="18"
+                        BorderBrush="#FFF96060"
+                        VerticalAlignment="Center"
+                        Margin="8 0 10 0"
+                        FontFamily="Actor"/>
+        </Border>
+    </WrapPanel>
+    </Grid>
+</Window>
