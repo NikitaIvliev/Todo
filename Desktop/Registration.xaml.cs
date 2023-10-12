@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,16 +27,27 @@ namespace Desktop
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-         
+
+            
             if (Validate.ValidateName(UserName.Text) == false)
             {
+                
                 MessageBox.Show("Incorrect name");
                 
             } 
+            else if(UserRepository.CheckUserName(UserName.Text))
+            {
+                MessageBox.Show("UserName is already token");
+            }
+
             else if (Validate.ValidateEmail(EmailAdress.Text) == false)
             {
                 MessageBox.Show("Incorrect email");
                 ;
+            }
+            else if (UserRepository.CheckUserEmail(EmailAdress.Text))
+            {
+                MessageBox.Show("Email is already token");
             }
             else if (Validate.ValidatePassword(Password.Password) == false)
             {
@@ -49,6 +61,7 @@ namespace Desktop
             }
             else
             {
+                UserRepository.Registration(UserName.Text, EmailAdress.Text, Password.Password);
                 var MainEmptyWindow = new MainEmpty();
                 MainEmptyWindow.Show();
                 this.Close();
