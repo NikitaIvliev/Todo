@@ -27,22 +27,22 @@ namespace Desktop
         private void Button_Click(object sender, RoutedEventArgs e)
         {
          
-            if (Validate.ValidateName(Name.Text) == false)
+            if (Validate.ValidateName(UserName.Text) == false)
             {
                 MessageBox.Show("Incorrect name");
                 
             } 
-            else if (Validate.ValidateEmail(RegisterEmail.Text) == false)
+            else if (Validate.ValidateEmail(EmailAdress.Text) == false)
             {
                 MessageBox.Show("Incorrect email");
                 ;
             }
-            else if (Validate.ValidatePassword(RegisterPassword.Password) == false)
+            else if (Validate.ValidatePassword(Password.Password) == false)
             {
                 MessageBox.Show("Incorrect password");
                 ;
             }
-            else if (RegisterPassword.Password != RegisterPasswordConfirm.Password)
+            else if (Password.Password != PasswordConfirm.Password)
             {
                 MessageBox.Show("Passwords don't match");
                 

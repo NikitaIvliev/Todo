@@ -43,7 +43,7 @@
                              FontSize="20"
                              FontFamily="Actor"/>
                         <TextBox 
-                             x:Name="Name"
+                             x:Name="UserName"
                              Width="326"
                              VerticalAlignment="Bottom"
                              BorderBrush="#FFDFDFDF" 
@@ -59,7 +59,7 @@
                 <Label Content="Ваша почта"
                        FontSize="20"
                        FontFamily="Actor"/>
-                <TextBox x:Name="RegisterEmail" 
+                <TextBox x:Name="EmailAdress" 
                          Width="326"
                          VerticalAlignment="Bottom"
                          BorderBrush="#FFDFDFDF"
@@ -77,7 +77,7 @@
                        FontSize="20"
                        FontFamily="Actor"/>
                 <PasswordBox 
-                       x:Name="RegisterPassword"  
+                       x:Name="Password"  
                        Width="326"
                        VerticalAlignment="Bottom" 
                        BorderBrush="#FFDFDFDF" 
@@ -95,7 +95,7 @@
                        FontSize="20"
                        FontFamily="Actor"/>
                 <PasswordBox 
-                              x:Name="RegisterPasswordConfirm"  
+                              x:Name="PasswordConfirm"  
                               Width="326"
                               VerticalAlignment="Bottom" 
                               BorderBrush="#FFDFDFDF"
