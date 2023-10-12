@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,43 @@ namespace Desktop
         public Registration()
         {
             InitializeComponent();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+         
+            if (Validate.ValidateName(Name.Text) == false)
+            {
+                MessageBox.Show("Incorrect name");
+                
+            } 
+            else if (Validate.ValidateEmail(RegisterEmail.Text) == false)
+            {
+                MessageBox.Show("Incorrect email");
+                ;
+            }
+            else if (Validate.ValidatePassword(RegisterPassword.Password) == false)
+            {
+                MessageBox.Show("Incorrect password");
+                ;
+            }
+            else if (RegisterPassword.Password != RegisterPasswordConfirm.Password)
+            {
+                MessageBox.Show("Passwords don't match");
+                
+            }
+            else
+            {
+                var MainEmptyWindow = new MainEmpty();
+                MainEmptyWindow.Show();
+                this.Close();
+            }
+           
+        }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            var LoginWindow = new LogIn();
+            LoginWindow.Show();
+            this.Close();
         }
     }
 }

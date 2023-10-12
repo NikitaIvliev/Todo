@@ -80,7 +80,8 @@
                         BorderBrush="#FFF96060"
                         VerticalAlignment="Center"
                         Margin="8 0 10 0"
-                        FontFamily="Actor" 
+                        FontFamily="Actor"
+                        Click="Button_Click"
             />
         </Border>
         <Border  Margin="5 0 5 10"
@@ -95,7 +96,9 @@
                         BorderBrush="#FFF96060"
                         VerticalAlignment="Center"
                         Margin="8 0 10 0"
-                        FontFamily="Actor"/>
+                        FontFamily="Actor"
+                        Click="Registration"
+                    />
         </Border>
     </WrapPanel>
     </Grid>

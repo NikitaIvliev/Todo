@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace Desktop
 {
     /// <summary>
@@ -23,5 +25,31 @@ namespace Desktop
         {
             InitializeComponent();
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Validate.ValidateEmail(Email.Text) == false)
+            {
+                MessageBox.Show("Incorrect email");
+            }
+            if (Validate.ValidatePassword(Password.Password) == false)
+            {
+                MessageBox.Show("Incorrect password");
+            }
+            else
+            {
+                var MainEmptyWindow = new MainEmpty();
+                MainEmptyWindow.Show();
+                this.Close();
+            }
+        }
+
+        private void Registration(object sender, RoutedEventArgs e)
+        {
+            var registration = new Registration();
+            registration.Show();
+            this.Close();
+        }
+
+       
     }
 }
