@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Desktop.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,17 +29,17 @@ namespace Desktop
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Validate.ValidateEmail(Email.Text) == false)
+            if (Validate.ValidateEmail(EmailAdress.Text) == false)
             {
                 MessageBox.Show("Incorrect email");
-            }
+            } 
             if (Validate.ValidatePassword(Password.Password) == false)
             {
                 MessageBox.Show("Incorrect password");
             }
             else
             {
-                var MainEmptyWindow = new MainEmpty();
+                var MainEmptyWindow = new MainEmpty(UserRepository.CurrentUserName(EmailAdress.Text));
                 MainEmptyWindow.Show();
                 this.Close();
             }

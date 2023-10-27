@@ -62,7 +62,7 @@ namespace Desktop
             else
             {
                 UserRepository.Registration(UserName.Text, EmailAdress.Text, Password.Password);
-                var MainEmptyWindow = new MainEmpty();
+                var MainEmptyWindow = new MainEmpty(UserName.Text);
                 MainEmptyWindow.Show();
                 this.Close();
             }

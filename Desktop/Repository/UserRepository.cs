@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using Todo.Entities;
@@ -11,7 +12,7 @@ namespace Desktop.Repository
     {
         private static List<UserModel> Users = new List<UserModel>()
         {
-            new UserModel{UserName="Admin", EmailAdress="Admin@mail.ru", Password="Admin"},  
+            new UserModel{UserName="Admin", EmailAdress="Admin@mail.ru", Password="Admin123"},  
         };
 
         public static bool Authorization(string EmailAdress, string Password)
@@ -51,6 +52,11 @@ namespace Desktop.Repository
         public static void Registration (string UserName, string EmailAdress, string Password)
         {
             Users.Add(new UserModel { UserName=UserName, EmailAdress=EmailAdress, Password=Password});  
+        }
+        public static string CurrentUserName(string EmailAdress)
+        {
+            var user = Users.Find(user => user.EmailAdress == EmailAdress);
+            return user.UserName;
         }
     }
 }

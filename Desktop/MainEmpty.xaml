@@ -25,7 +25,8 @@
         </Style>
         </Window.Resources>
         <Grid>
-
+        <TextBlock x:Name="Name"
+            Grid.Column="0" Margin="10,128,674,418"/>
         <Image Source="C:\Users\1\source\repos\Todo\Desktop\Images\Profile.png" 
 
                Margin="10,10,674,456"
@@ -44,6 +45,7 @@
                 Background="#F96060"
                 Foreground="White"
                 Style="{DynamicResource RoundedButtonStyle}"
-                />
+                Click="Button_Click"/> 
+            
     </Grid>
 </Window>

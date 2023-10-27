@@ -17,11 +17,23 @@ namespace Desktop
     /// <summary>
     /// Логика взаимодействия для MainEmpty.xaml
     /// </summary>
-    public partial class MainEmpty : Window
-    {
-        public MainEmpty()
+   
+        public partial class MainEmpty : Window
         {
-            InitializeComponent();
+            private string username;
+            public MainEmpty(string _username)
+            {
+                InitializeComponent();
+                username = _username;
+                Name.Text = username;
+            }
+
+            private void Button_Click(object sender, RoutedEventArgs e)
+            {
+                var main = new Main(username);
+                main.Show();
+                this.Close();
+            }
         }
-    }
+    
 }

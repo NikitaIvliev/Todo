@@ -40,7 +40,7 @@
                     FontSize="20"
                     FontFamily="Actor"/>
                     <TextBox 
-                        x:Name="Email" 
+                        x:Name="EmailAdress" 
                         Width="326"
                         VerticalAlignment="Bottom"
                         BorderBrush="#FFDFDFDF"
